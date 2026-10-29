@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Графы пользователей · Kliker Blocks</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery{padding:95px 0;min-height:70vh}.gallery h1{font-size:clamp(38px,5vw,72px);line-height:1.05;margin:12px 0 20px}
+    .gallery-intro{max-width:760px;color:#526a7b}.gallery-actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 36px}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:17px}
+    .gallery-card{border:1px solid #d9e5e9;border-radius:15px;background:white;padding:24px;box-shadow:0 10px 26px #153c4820}
+    .gallery-card h2{font-size:22px;margin:8px 0}.gallery-card p{font-size:14px;color:#526a7b;white-space:pre-wrap;overflow-wrap:anywhere}
+    .gallery-card small{color:#54806e}.gallery-card .gallery-actions{margin-bottom:0}
+    .gallery-card button{border:1px solid #a8cac0;background:#e7f4ef;color:#164b48;border-radius:8px;padding:9px 12px;cursor:pointer}
+    .gallery-status{color:#587166}
+  </style>
+  <script type="module" src="graphs.js"></script>
+</head>
+<body>
+  <header class="site-header"><div class="shell nav-row"><a class="brand" href="index.html"><img src="assets/mark.svg" alt=""><span>Kliker<span class="brand-accent">Blocks</span></span></a><nav aria-label="Navigation"><a href="index.html#catalog" id="catalog-link">Справочник блоков</a><a href="index.html#community" id="community-link">Сообщество</a></nav><button id="gallery-language" class="lang-button" type="button">EN</button></div></header>
+  <main class="gallery shell"><p class="kicker" id="gallery-kicker">СООБЩЕСТВО</p><h1 id="gallery-title">Графы пользователей</h1><p class="gallery-intro" id="gallery-intro">Открытые графы Kliker Blocks из GitHub Discussions. Просмотрите код перед запуском: графы пользователей могут работать с файлами, окнами и сетью.</p><div class="gallery-actions"><a class="button button-primary" href="https://github.com/Malyshrush/kliker-blocks-site/discussions/new?category=%D0%93%D1%80%D0%B0%D1%84%D1%8B%20%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D0%B5%D0%B9" id="publish-link">Поделиться графом ↗</a><a class="button button-outline" href="https://github.com/Malyshrush/kliker-blocks-site/discussions" id="all-link">Все обсуждения ↗</a></div><p class="gallery-status" id="gallery-status">Загрузка графов…</p><div class="gallery-grid" id="gallery-grid"></div></main>
+</body>
+</html>
