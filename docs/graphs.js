@@ -1,13 +1,17 @@
 const language = localStorage.getItem('kb-locale') === 'en' ? 'en' : 'ru';
 const phrases = {
-  ru: { catalog: 'Справочник блоков', community: 'Сообщество', kicker: 'СООБЩЕСТВО',
-    title: 'Графы пользователей', intro: 'Открытые графы Kliker Blocks из GitHub Discussions. Просмотрите код перед запуском: графы пользователей могут работать с файлами, окнами и сетью.',
+  ru: { catalog: 'Справочник блоков', community: 'Сообщество', kicker: 'KLIKER BLOCKS',
+    title: 'База графов', intro: 'Примеры с подсказками и тестовыми файлами, а также графы пользователей из GitHub Discussions.',
+    ready: 'Готовые графы', readyIntro: 'Распакуйте архив и откройте Scenario.klb в Kliker Blocks. В комплекте есть инструкция.',
+    download: 'Скачать граф ↓', bundle: 'Скачать все семь графов ↓', userGraphs: 'Графы пользователей',
     publish: 'Поделиться графом ↗', all: 'Все обсуждения ↗', loading: 'Загрузка графов…',
     empty: 'Пока нет опубликованных графов. Вы можете поделиться первым.',
     error: 'Список пока недоступен. Откройте обсуждения GitHub.',
     view: 'Открыть обсуждение ↗', copy: 'Копировать код', copied: 'Скопировано' },
-  en: { catalog: 'Block catalog', community: 'Community', kicker: 'COMMUNITY',
-    title: 'User graphs', intro: 'Public Kliker Blocks graphs from GitHub Discussions. Review code before running it: user graphs can access files, windows and the network.',
+  en: { catalog: 'Block catalog', community: 'Community', kicker: 'KLIKER BLOCKS',
+    title: 'Graph library', intro: 'Examples with setup hints and test files, plus user graphs from GitHub Discussions.',
+    ready: 'Ready-to-use graphs', readyIntro: 'Extract the archive and open Scenario.klb in Kliker Blocks. Setup instructions are included.',
+    download: 'Download graph ↓', bundle: 'Download all seven graphs ↓', userGraphs: 'User graphs',
     publish: 'Share a graph ↗', all: 'All discussions ↗', loading: 'Loading graphs…',
     empty: 'No graphs have been published yet. You can share the first one.',
     error: 'The gallery is unavailable. Open GitHub Discussions instead.',
@@ -17,12 +21,36 @@ document.documentElement.lang = language;
 document.title = `${phrases.title} · Kliker Blocks`;
 for (const [id,key] of Object.entries({ 'catalog-link':'catalog', 'community-link':'community',
   'gallery-kicker':'kicker', 'gallery-title':'title', 'gallery-intro':'intro',
-  'publish-link':'publish', 'all-link':'all', 'gallery-status':'loading' }))
+  'publish-link':'publish', 'all-link':'all', 'gallery-status':'loading',
+  'ready-title':'ready', 'ready-intro':'readyIntro', 'ready-all':'bundle', 'community-title':'userGraphs' }))
   document.getElementById(id).textContent = phrases[key];
 document.getElementById('gallery-language').textContent = language === 'ru' ? 'EN' : 'RU';
 document.getElementById('gallery-language').onclick = () => {
   localStorage.setItem('kb-locale', language === 'ru' ? 'en' : 'ru'); location.reload();
 };
+
+document.getElementById('ready-all').href =
+  `https://github.com/Malyshrush/kliker-blocks/releases/download/v1.2.6/KlikerBlocks-Graphs-1.2.6-${language}.zip`;
+
+async function renderReadyGraphs() {
+  const response = await fetch('data/ready-graphs.json');
+  if (!response.ok) throw Error(response.status);
+  const catalog = await response.json();
+  const grid = document.getElementById('ready-grid');
+  for (const graph of catalog[language]) {
+    if (!/^[a-z0-9-]+\.zip$/.test(graph.file)) continue;
+    const card = document.createElement('article');
+    card.className = 'gallery-card';
+    const section = document.createElement('small'); section.textContent = graph.section;
+    const title = document.createElement('h3'); title.textContent = graph.title;
+    const description = document.createElement('p'); description.textContent = graph.description;
+    const link = document.createElement('a'); link.href = `assets/graphs/${graph.file}`;
+    link.textContent = phrases.download;
+    card.append(section, title, description, link);
+    grid.append(card);
+  }
+}
+renderReadyGraphs().catch(() => { document.getElementById('ready-status').textContent = phrases.error; });
 
 try {
   const response = await fetch('data/community-graphs.json', { cache: 'no-store' });
