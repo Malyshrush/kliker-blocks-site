@@ -1,0 +1,90 @@
+{
+  "ru": [
+    {
+      "title": "11 · Снимок со скрытыми полями",
+      "section": "Экран и снимки",
+      "description": "Закрасить два поля на снимке.",
+      "file": "11-redact-screenshot-ru.zip"
+    },
+    {
+      "title": "12 · Посчитать значки на экране",
+      "section": "Экран и снимки",
+      "description": "Посчитать совпадения с образцом значка.",
+      "file": "12-count-badges-ru.zip"
+    },
+    {
+      "title": "15 · Голосовой интервальный таймер",
+      "section": "Тренировка и памятки",
+      "description": "Озвучить работу, отдых и завершение раундов.",
+      "file": "15-interval-timer-ru.zip"
+    },
+    {
+      "title": "16 · Карточки для тренировки",
+      "section": "Тренировка и памятки",
+      "description": "Повторять карточки и сохранять список ошибок.",
+      "file": "16-flashcards-ru.zip"
+    },
+    {
+      "title": "17 · Пошаговая памятка",
+      "section": "Тренировка и памятки",
+      "description": "Показывать шаги в заметке по очереди.",
+      "file": "17-step-note-ru.zip"
+    },
+    {
+      "title": "20 · Дежурный для окна",
+      "section": "Наблюдение",
+      "description": "Следить за окном и предложить запуск после закрытия.",
+      "file": "20-window-watchdog-ru.zip"
+    },
+    {
+      "title": "21 · Проверка локального сервиса",
+      "section": "Наблюдение",
+      "description": "Проверять ответ локального сервиса и сообщать о сбое.",
+      "file": "21-service-health-ru.zip"
+    }
+  ],
+  "en": [
+    {
+      "title": "11 · Redact a screenshot",
+      "section": "Screen and screenshots",
+      "description": "Cover two fields in a screenshot.",
+      "file": "11-redact-screenshot-en.zip"
+    },
+    {
+      "title": "12 · Count icons on screen",
+      "section": "Screen and screenshots",
+      "description": "Count matching icons on the screen.",
+      "file": "12-count-badges-en.zip"
+    },
+    {
+      "title": "15 · Spoken interval timer",
+      "section": "Practice and guides",
+      "description": "Hear cues for work, rest and the last round.",
+      "file": "15-interval-timer-en.zip"
+    },
+    {
+      "title": "16 · Flashcards",
+      "section": "Practice and guides",
+      "description": "Practise with cards and save items to review.",
+      "file": "16-flashcards-en.zip"
+    },
+    {
+      "title": "17 · Step-by-step guide",
+      "section": "Practice and guides",
+      "description": "Show one step at a time in a note.",
+      "file": "17-step-note-en.zip"
+    },
+    {
+      "title": "20 · Watch a window",
+      "section": "Monitoring",
+      "description": "Watch a window and offer to open a file when it disappears.",
+      "file": "20-window-watchdog-en.zip"
+    },
+    {
+      "title": "21 · Check a local service",
+      "section": "Monitoring",
+      "description": "Check a local service and report errors.",
+      "file": "21-service-health-en.zip"
+    }
+  ]
+}
