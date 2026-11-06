@@ -30,7 +30,7 @@ document.getElementById('gallery-language').onclick = () => {
 };
 
 document.getElementById('ready-all').href =
-  `https://github.com/Malyshrush/kliker-blocks/releases/download/v1.2.6/KlikerBlocks-Graphs-1.2.6-${language}.zip`;
+  `https://github.com/Malyshrush/kliker-blocks/releases/download/v1.2.7/KlikerBlocks-Graphs-1.2.7-${language}.zip`;
 
 async function renderReadyGraphs() {
   const response = await fetch('data/ready-graphs.json');
