@@ -18,6 +18,7 @@ const phrases = {
     view: 'Open discussion ↗', copy: 'Copy code', copied: 'Copied' }
 }[language];
 document.documentElement.lang = language;
+document.querySelector('nav').setAttribute('aria-label', language === 'ru' ? 'Навигация' : 'Navigation');
 document.title = `${phrases.title} · Kliker Blocks`;
 for (const [id,key] of Object.entries({ 'catalog-link':'catalog', 'community-link':'community',
   'gallery-kicker':'kicker', 'gallery-title':'title', 'gallery-intro':'intro',
@@ -30,7 +31,7 @@ document.getElementById('gallery-language').onclick = () => {
 };
 
 document.getElementById('ready-all').href =
-  `https://github.com/Malyshrush/kliker-blocks/releases/download/v1.2.7/KlikerBlocks-Graphs-1.2.7-${language}.zip`;
+  `https://github.com/Malyshrush/kliker-blocks/releases/download/v1.2.8/KlikerBlocks-Graphs-1.2.8-${language}.zip`;
 
 async function renderReadyGraphs() {
   const response = await fetch('data/ready-graphs.json');
