@@ -31,7 +31,7 @@ document.getElementById('gallery-language').onclick = () => {
 };
 
 document.getElementById('ready-all').href =
-  `https://github.com/Malyshrush/kliker-blocks/releases/download/v1.3.1/KlikerBlocks-Graphs-1.3.1-${language}.zip`;
+  `https://github.com/Malyshrush/kliker-blocks/releases/download/v1.3.2/KlikerBlocks-Graphs-1.3.2-${language}.zip`;
 
 async function renderReadyGraphs() {
   const response = await fetch('data/ready-graphs.json');
